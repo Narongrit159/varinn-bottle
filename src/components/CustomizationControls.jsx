@@ -18,7 +18,6 @@ export default function CustomizationControls({
   const subRef = useRef()
   const paRef = useRef()
 
-  // ปิด picker ถ้ากดนอก
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (mainRef.current && !mainRef.current.contains(e.target))
@@ -31,7 +30,7 @@ export default function CustomizationControls({
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
   return (
-    <div className="flex flex-col gap-6 p-2 sm:p-4 rounded-3xl max-w-sm w-full">
+    <div className="flex flex-col gap-6 p-2 sm:p-4 rounded-3xl max-w-sm w-full ">
       <div className="flex flex-col gap-6 p-2 sm:p-4 rounded-3xl max-w-sm w-full">
         {/* Main Color */}
         <div className="relative w-full">
@@ -39,11 +38,11 @@ export default function CustomizationControls({
             className="flex flex-col gap-3 sm:gap-1 cursor-pointer justify-between"
             onClick={() => setMainOpen(!mainOpen)}
           >
-            <label className="text-sm font-semibold text-gray-700 whitespace-nowrap">
+            <label className="text-sm font-semibold text-gray-600 whitespace-nowrap">
               Main Color
             </label>
             <div
-              className="w-full h-12 rounded-xl border border-gray-300 shadow-sm"
+              className="w-full h-12 rounded-xl border border-[#e39f94] shadow-sm"
               style={{ backgroundColor: main_color }}
             />
           </div>
@@ -67,11 +66,11 @@ export default function CustomizationControls({
               className="flex flex-col  gap-3 sm:gap-1 cursor-pointer justify-between"
               onClick={() => setSubOpen(!subOpen)}
             >
-              <label className="text-sm font-semibold text-gray-700 whitespace-nowrap">
+              <label className="text-sm font-semibold text-gray-600 whitespace-nowrap">
                 Accent Color
               </label>
               <div
-                className="w-full h-12 rounded-xl border border-gray-300 shadow-sm"
+                className="w-full h-12 rounded-xl border border-[#e39f94] shadow-sm"
                 style={{ backgroundColor: sub_color }}
               />
             </div>
@@ -93,11 +92,11 @@ export default function CustomizationControls({
               className="flex flex-col  gap-3 sm:gap-1 cursor-pointer justify-between"
               onClick={() => setPaOpen(!paOpen)}
             >
-              <label className="text-sm font-semibold text-gray-700 whitespace-nowrap">
+              <label className="text-sm font-semibold text-gray-600 whitespace-nowrap">
                 Pattern Color
               </label>
               <div
-                className="w-full h-12 rounded-xl border border-gray-300 shadow-sm"
+                className="w-full h-12 rounded-xl border border-[#e39f94] shadow-sm"
                 style={{ backgroundColor: paColor }}
               />
             </div>
@@ -120,7 +119,7 @@ export default function CustomizationControls({
       {/* --- Pattern / Texture Selection 1 --- */}
       <div className="flex flex-col gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm">
         <div className="flex flex-col">
-          <label className="text-sm font-semibold text-gray-700">
+          <label className="text-sm font-semibold text-gray-600">
             Choose Normal Pattern
           </label>
           <p className="text-gray-500 text-xs italic">
@@ -129,14 +128,23 @@ export default function CustomizationControls({
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 ">
           {[
-            { thumb: '/img/BT-IMG-4.png', texture: '/img/P4.png' },
-            { thumb: '/img/BT-IMG-5.png', texture: '/img/P5.png' },
-            { thumb: '/img/BT-IMG-6.png', texture: '/img/P6.png' },
-            { thumb: '/img/null-10.png', texture: 'null' },
+            {
+              thumb: '/varinn/img/BT-IMG-4.png',
+              texture: '/varinn/img/P4.png',
+            },
+            {
+              thumb: '/varinn/img/BT-IMG-5.png',
+              texture: '/varinn/img/P5.png',
+            },
+            {
+              thumb: '/varinn/img/BT-IMG-6.png',
+              texture: '/varinn/img/P6.png',
+            },
+            { thumb: '/varinn/img/null-10.png', texture: 'null' },
           ].map((item) => (
             <button
               key={item.texture}
-              className="rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:ring-2 hover:ring-pink-400 transition-all duration-300"
+              className="rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:ring-2 hover:ring-[#e39f94] transition-all duration-300"
               onClick={() => onSelectPattern(item.texture)}
             >
               <img
@@ -150,7 +158,7 @@ export default function CustomizationControls({
       </div>
 
       {/* --- Pattern / Texture Selection 2 --- */}
-      <div className="flex flex-col gap-4 bg-pink-50 p-4 rounded-2xl border border-pink-200 shadow-sm">
+      <div className="flex flex-col gap-4 bg-[#fff4f2] p-4 rounded-2xl border border-[#e39f94] shadow-sm">
         <div className="flex flex-col">
           <label className="text-sm font-semibold text-gray-700">
             Choose Valentine's Pattern
@@ -162,14 +170,23 @@ export default function CustomizationControls({
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 ">
           {[
-            { thumb: '/img/BT-IMG-1.png', texture: '/img/P1.png' },
-            { thumb: '/img/BT-IMG-2.png', texture: '/img/P2.png' },
-            { thumb: '/img/BT-IMG-3.png', texture: '/img/P3.png' },
-            { thumb: '/img/null-10.png', texture: 'null' },
+            {
+              thumb: '/varinn/img/BT-IMG-1.png',
+              texture: '/varinn/img/P1.png',
+            },
+            {
+              thumb: '/varinn/img/BT-IMG-2.png',
+              texture: '/varinn/img/P2.png',
+            },
+            {
+              thumb: '/varinn/img/BT-IMG-3.png',
+              texture: '/varinn/img/P3.png',
+            },
+            { thumb: '/varinn/img/null-10.png', texture: 'null' },
           ].map((item) => (
             <button
               key={item.texture}
-              className="rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:ring-2 hover:ring-pink-400 transition-all duration-300"
+              className="rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:ring-2 hover:ring-[#e39f94] transition-all duration-300"
               onClick={() => onSelectPattern(item.texture)}
             >
               <img

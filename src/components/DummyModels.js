@@ -5,7 +5,7 @@ import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export function Varrinn1({ main_color, sub_color, selectedImage, paColor }) {
-  const gltf = useLoader(GLTFLoader, '/models/varinn-1.glb')
+  const gltf = useLoader(GLTFLoader, '/varinn/models/varinn-1.glb')
   const { scene } = useThree()
 
   const controlsRef = useRef()

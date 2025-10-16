@@ -11,15 +11,15 @@ function App() {
   const [selectedImage, setSelectedImage] = useState('')
 
   return (
-    <div className="flex flex-col w-screen h-screen bg-gradient-to-br from-pink-200 via-white to-pink-100 font-sans p-4 gap-3 overflow-auto lg:p-8 lg:gap-4 lg:pb-4">
+    <div className="flex flex-col w-screen h-screen bg-gradient-to-br from-[#F8DAD3] via-white to-[#EAC2BB] font-sans p-4 gap-3 overflow-auto lg:p-8 lg:gap-4 lg:pb-4">
       <div className="flex flex-col lg:flex-row p-4 gap-4 lg:p-6 lg:h-full lg:justify-between rounded-3xl bg-white border border-pink-200 shadow-2xl transition-all duration-500 hover:shadow-3xl">
         {/* Left Side - Bottle Viewer */}
         <div className="flex flex-col w-full items-center justify-center gap-3 lg:gap-4">
           <div className="cursor-pointer">
-            <div className="text-3xl sm:text-5xl font-extrabold text-pink-700 text-center tracking-wider drop-shadow-lg transition-transform duration-300 hover:scale-105 hover:text-pink-500 hover:drop-shadow-2xl">
+            <div className="text-3xl sm:text-5xl font-extrabold text-[#e39f94] text-center tracking-wider drop-shadow-lg transition-transform duration-300 hover:scale-105 hover:text-[#c7887d] hover:drop-shadow-2xl">
               VARINN
             </div>
-            <div className="text-xs sm:text-sm text-pink-500 text-center italic transition-colors duration-300 hover:text-pink-600">
+            <div className="text-xs sm:text-sm text-[#e39f94] text-center italic transition-colors duration-300 hover:text-[#c7887d]">
               Rotate your bottle to admire every luxurious angle 💖
             </div>
           </div>
@@ -36,9 +36,12 @@ function App() {
 
         <div className="hidden lg:block h-full border-l border-gray-300 my-2 hover:border-emerald-500 transition-colors duration-300 mx-4"></div>
 
-        <div className="flex flex-col p-3 sm:p-2 min-w-full sm:min-w-[400px] gap-3 sm:gap-2">
+        <div
+          style={{ fontFamily: 'sans-serif' }}
+          className="flex flex-col p-3 sm:p-2 min-w-full sm:min-w-[400px] gap-3 sm:gap-2 font-sans"
+        >
           <div className="flex flex-col">
-            <div className="text-lg sm:text-2xl font-bold   text-pink-700 text-center border-b pb-1 sm:pb-2 border-pink-200 tracking-wide transition-colors duration-300 hover:text-pink-600">
+            <div className="text-lg sm:text-2xl font-bold   text-[#e39f94] text-center border-b pb-1 sm:pb-2 border-pink-200 tracking-wide transition-colors duration-300 hover:text-[#c7887d]">
               Customize
             </div>
             <CustomizationControls
@@ -52,7 +55,7 @@ function App() {
               onSelectPattern={setSelectedImage}
             />
           </div>
-          <button className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-full bg-pink-600 text-white font-semibold shadow-xl hover:bg-pink-700 hover:scale-105 transform transition-all duration-300">
+          <button className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-full bg-[#e39f94] text-white font-semibold shadow-xl hover:bg-[#c7887d] hover:scale-105 transform transition-all duration-300">
             Order Now
           </button>
         </div>
