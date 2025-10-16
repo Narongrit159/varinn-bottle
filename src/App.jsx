@@ -55,9 +55,6 @@ function App() {
               onSelectPattern={setSelectedImage}
             />
           </div>
-          <button className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-full bg-[#e39f94] text-white font-semibold shadow-xl hover:bg-[#c7887d] hover:scale-105 transform transition-all duration-300">
-            Order Now
-          </button>
         </div>
       </div>
     </div>
