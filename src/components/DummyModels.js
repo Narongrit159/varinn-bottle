@@ -1,14 +1,37 @@
 import React, { useEffect, useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
 import { useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-export function Varrinn1({ main_color, sub_color, selectedImage, paColor }) {
+export function Varrinn1({
+  main_color,
+  sub_color,
+  selectedImage,
+  paColor,
+  isRotating,
+}) {
   const gltf = useLoader(GLTFLoader, '/varinn/models/varinn-1.glb')
   const { scene } = useThree()
 
   const controlsRef = useRef()
+  const modelRef = useRef()
+
+  useEffect(() => {
+    const model = gltf.scene
+    modelRef.current = model
+    // ... (โค้ดตั้งค่า model เดิมของกุ๊กไก่ทั้งหมด)
+    scene.add(model)
+    return () => scene.remove(model)
+  }, [scene, gltf.scene])
+
+  // เพิ่มส่วนนี้
+  useFrame(() => {
+    if (isRotating && modelRef.current) {
+      modelRef.current.rotation.y += 0.01
+    }
+  })
 
   useEffect(() => {
     const model = gltf.scene

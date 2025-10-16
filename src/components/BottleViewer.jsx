@@ -16,6 +16,7 @@ export default function BottleViewer({
   sub_color,
   paColor,
   selectedImage,
+  isRotating,
 }) {
   const controlsRef = useRef()
   const initialCameraPos = new THREE.Vector3(1, -2, -4)
@@ -102,6 +103,7 @@ export default function BottleViewer({
           sub_color={sub_color}
           selectedImage={selectedImage}
           paColor={paColor}
+          isRotating={isRotating}
         />
       </Canvas>
     </div>
