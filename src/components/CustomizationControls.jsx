@@ -127,7 +127,7 @@ export default function CustomizationControls({
             Celebrate love with romantic designs for your bottle!
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 overflow-x-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 ">
           {[
             { thumb: '/img/BT-IMG-4.png', texture: '/img/P4.png' },
             { thumb: '/img/BT-IMG-5.png', texture: '/img/P5.png' },
